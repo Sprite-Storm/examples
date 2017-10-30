@@ -1,0 +1,14 @@
+{
+  "uri": "create",
+  "name": "Create",
+  "tabs": [
+    {
+      "name": "Info",
+      "value": "some info here"
+    },
+    {
+      "name": "Game State",
+      "value": "foobar"
+    }
+  ]
+}

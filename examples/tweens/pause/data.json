@@ -1,0 +1,14 @@
+{
+  "uri": "pause",
+  "name": "Pause",
+  "tabs": [
+    {
+      "name": "Info",
+      "value": "some info here"
+    },
+    {
+      "name": "Game State",
+      "value": "foobar"
+    }
+  ]
+}

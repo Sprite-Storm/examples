@@ -1,0 +1,14 @@
+{
+  "uri": "custom-frames",
+  "name": "Custom Frames",
+  "tabs": [
+    {
+      "name": "Info",
+      "value": "some info here"
+    },
+    {
+      "name": "Game State",
+      "value": "foobar"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "lightning-example-compiler",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nicholas Mordecai (http://nicholasmordecai.co.uk)",
+  "license": "ISC",
+  "devDependencies": {
+    "rmdir": "^1.2.0"
+  }
+}

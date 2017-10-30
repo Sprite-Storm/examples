@@ -1,0 +1,31 @@
+{
+  "name": "game-build",
+  "version": "1.0.0",
+  "description": "example build for lightning based game",
+  "main": "public/index.html",
+  "scripts": {
+    "postinstall": "",
+    "start": "gulp cleanup && gulp copy-static && npm run compile && gulp compile-js && npm run dev",
+    "dev": "concurrently \"gulp watch\" \"tsc -w\"",
+    "compile": "tsc",
+    "bundle": "browserify src/js/main.js -o public/js/bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "Nicholas Mordecai",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.18.7",
+    "browserify": "^14.1.0",
+    "concurrently": "^3.3.0",
+    "gulp": "^3.9.1",
+    "gulp-browserify": "^0.5.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-copy": "^1.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-watch": "^4.3.11"
+  },
+  "dependencies": {}
+}
