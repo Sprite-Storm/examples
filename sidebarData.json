@@ -1,0 +1,14 @@
+[
+    {
+        "active": true,
+        "name": "Sprites",
+        "uri": "sprites",
+        "count": 0
+    },
+    {
+        "active": true,
+        "name": "Tweens",
+        "uri": "tweens",
+        "count": 1
+    }
+]

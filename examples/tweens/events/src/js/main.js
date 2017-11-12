@@ -1,14 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var boot_1 = require("./states/boot");
-var preload_1 = require("./states/preload");
-var game_1 = require("./states/game");
+var boot_1 = require("./scenes/boot");
+var preload_1 = require("./scenes/preload");
+var game_1 = require("./scenes/game");
 var Game = (function () {
-    function Game(width, height, divId) {
+    function Game(width, height) {
         if (width === void 0) { width = 500; }
         if (height === void 0) { height = 500; }
-        if (divId === void 0) { divId = 'app'; }
         this.game = new Lightning.Engine(width, height, {
+            divID: 'app-container',
             rendererOptions: {
                 transparent: false
             }
@@ -21,7 +21,8 @@ var Game = (function () {
     return Game;
 }());
 exports.default = Game;
-var width = window.innerWidth;
+var div = document.getElementById('app-container');
+var width = div.offsetWidth;
 var height = width * 0.7;
 window.onload = function () {
     new Game(width, height);

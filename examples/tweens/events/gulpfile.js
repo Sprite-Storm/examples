@@ -1,9 +1,12 @@
-const gulp = require('gulp');
-const browserSync = require('browser-sync').create();
-const browserify = require('gulp-browserify');
-const rename = require('gulp-rename');
-const watch = require('gulp-watch');
-const clean = require('gulp-clean');
+var gulp = require('gulp');
+var browserSync = require('browser-sync').create();
+var browserify = require('browserify');
+var source = require('vinyl-source-stream');
+var rename = require('gulp-rename');
+var watch = require('gulp-watch');
+var clean = require('gulp-clean');
+
+// browserify()
 
 /**
  * TO DO
@@ -24,14 +27,13 @@ gulp.task('reload-css', function () {
         .pipe(browserSync.stream());
 });
 
-gulp.task('compile-js', function() {
-    gulp.src('src/js/main.js')
-        .pipe(browserify({
-          insertGlobals : true
-        }))
-        .pipe(rename('game.js'))
-        .pipe(gulp.dest('./public/js/', {overwrite: true}))
-});
+gulp.task('browserify', function() {
+    return browserify('src/js/main.js')
+        .bundle()
+        .pipe(source('game.js'))
+        .pipe(gulp.dest('public/js'), {overwrite: true})
+        .pipe(gulp.dest('dist', {overwrite: true}));
+})
 
 gulp.task('cleanup', function () {
     gulp.src('public', {read: false})
@@ -50,7 +52,7 @@ gulp.task('watch-folder', function() {
 });
 
 gulp.task('watch', ['watch-folder', 'browser-sync'], function () {
-    gulp.watch("src/js/**/*.js", ['compile-js']);
+    gulp.watch("src/js/**/*.js", ['browserify']);
     gulp.watch("public/css/**/*.css", ["reload-css"]);
     gulp.watch("public/**/*.html").on('change', browserSync.reload);
     gulp.watch("public/js/game.js").on('change', browserSync.reload);

@@ -1,14 +1,22 @@
 {
-  "uri": "events",
   "name": "Events",
+  "uri": "events",
+  "thumb": "/img/examples/tweens/events/thumb.png",
+  "version": "0.5.1",
   "tabs": [
     {
       "name": "Info",
-      "value": "some info here"
+      "id": "info",
+      "desc": "",
+      "src_file": "info.txt",
+      "language": "markdown"
     },
     {
       "name": "Game State",
-      "value": "foobar"
+      "id": "game-state",
+      "desc": "",
+      "src_file": "src/ts/scenes/game.ts",
+      "language": "typescript"
     }
   ]
 }

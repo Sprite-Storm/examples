@@ -1,0 +1,75 @@
+{
+    "sprites": [],
+    "tweens": [
+        {
+            "name": "Events",
+            "uri": "events",
+            "thumb": "/examples/tweens/events/thumb.png",
+            "version": "0.5.1",
+            "tabs": [
+                {
+                    "name": "Info",
+                    "id": "info",
+                    "desc": "",
+                    "src_file": "info.txt",
+                    "language": "markdown",
+                    "value": [
+                        "Here is some text.",
+                        "Lets go ahead and populate some stuff here.",
+                        "You will want to do:",
+                        "A.",
+                        "B.",
+                        "C.",
+                        "    1.",
+                        "    2.",
+                        "D."
+                    ]
+                },
+                {
+                    "name": "Game State",
+                    "id": "game-state",
+                    "desc": "",
+                    "src_file": "src/ts/scenes/game.ts",
+                    "language": "typescript",
+                    "value": [
+                        "export default class GameScene extends Lightning.Scene {",
+                        "",
+                        "    public create() {",
+                        "        // infinite looping",
+                        "        let cube:Lightning.Sprite = new Lightning.Sprite(<Lightning.Texture>Lightning.Geometry.Square(50, 0xff2200));",
+                        "        this.add(cube);",
+                        "",
+                        "        let tween:Lightning.Tween = this.game.tweens.create(cube);",
+                        "        tween.createAnim(0, 250, 500, 'y', Lightning.Easing.ExpoInOut);",
+                        "",
+                        "        tween.subscribe('start', () => {",
+                        "            console.log('tween started');",
+                        "        });",
+                        "",
+                        "        tween.subscribe('complete', () => {",
+                        "            console.log('tween completed');",
+                        "        });",
+                        "",
+                        "        tween.start();",
+                        "",
+                        "        /**",
+                        "         * Full list of events:",
+                        "         * start",
+                        "         * pause",
+                        "         * tick",
+                        "         * loop",
+                        "         * complete",
+                        "         * reset",
+                        "         * destroy",
+                        "         */",
+                        "    }",
+                        "}"
+                    ]
+                }
+            ],
+            "scriptSrc": "game.js",
+            "url": "tweens/events",
+            "parent": "tweens"
+        }
+    ]
+}
