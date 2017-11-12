@@ -1,6 +1,6 @@
 {
-  "name": "Events",
-  "uri": "events",
+  "name": "Basic",
+  "uri": "basic",
   "thumb": "/img/examples/tweens/events/thumb.png",
   "version": "0.5.1",
   "tabs": [

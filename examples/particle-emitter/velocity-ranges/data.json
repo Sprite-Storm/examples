@@ -1,7 +1,6 @@
 {
-  "name": "Events",
-  "uri": "events",
-  "thumb": "/img/examples/tweens/events/thumb.png",
+  "name": "Velocity Ranges",
+  "uri": "velocity-ranges",
   "version": "0.5.1",
   "tabs": [
     {

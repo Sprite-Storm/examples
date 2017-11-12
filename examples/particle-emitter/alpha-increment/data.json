@@ -1,7 +1,6 @@
 {
-  "name": "Events",
-  "uri": "events",
-  "thumb": "/img/examples/tweens/events/thumb.png",
+  "name": "Alpha Increment",
+  "uri": "alpha-increment",
   "version": "0.5.1",
   "tabs": [
     {
