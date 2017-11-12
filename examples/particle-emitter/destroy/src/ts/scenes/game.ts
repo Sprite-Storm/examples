@@ -1,0 +1,26 @@
+export default class GameScene extends Lightning.Scene {
+
+protected particleEmitter:Lightning.ParticleEmitter
+
+    create() {
+        // create new particle emitter
+        this.particleEmitter = new Lightning.ParticleEmitter(this, this.game.center.x, this.game.center.y);
+
+        // add the particle emitter to this stage
+        this.add(this.particleEmitter);
+
+        // make a new texture from the geomerty class
+        let texture = this.game.texture(Lightning.Geometry.Circle(5));
+
+        // add that texture to the particle emitter
+        this.particleEmitter.add(texture);
+
+        // start the particle emitter (not passing any parameters will make it run indefinitly)
+        this.particleEmitter.start();
+
+        // destroy the particle emitter after 2500ms
+        setTimeout(() => {
+            this.particleEmitter.destroy();
+        }, 2500)
+    }
+}
