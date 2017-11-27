@@ -1,5 +1,10 @@
 {
     "active": true,
+<<<<<<< HEAD
     "name": "Input",
     "uri": "input"
+=======
+    "name": "Sprites",
+    "uri": "sprites"
+>>>>>>> 538a294ebcbc85821fd4f04c1a63b02243ca9cbd
 }

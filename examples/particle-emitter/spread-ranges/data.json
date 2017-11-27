@@ -1,0 +1,22 @@
+{
+  "name": "Spread Ranges",
+  "uri": "spread-ranges",
+  "thumb": "/img/examples/tweens/events/thumb.png",
+  "version": "0.5.1",
+  "tabs": [
+    {
+      "name": "Info",
+      "id": "info",
+      "desc": "",
+      "src_file": "info.txt",
+      "language": "markdown"
+    },
+    {
+      "name": "Game State",
+      "id": "game-state",
+      "desc": "",
+      "src_file": "src/ts/scenes/game.ts",
+      "language": "typescript"
+    }
+  ]
+}
