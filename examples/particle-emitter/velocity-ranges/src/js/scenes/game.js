@@ -16,28 +16,21 @@ var GameScene = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     GameScene.prototype.create = function () {
-        // infinite looping
-        var cube = new Lightning.Sprite(Lightning.Geometry.Square(50, 0xff2200));
-        this.add(cube);
-        var tween = this.game.tweens.create(cube);
-        tween.createAnim(0, 250, 500, 'y', Lightning.Easing.ExpoInOut);
-        tween.subscribe('start', function () {
-            console.log('tween started');
-        });
-        tween.subscribe('complete', function () {
-            console.log('tween completed');
-        });
-        tween.start();
-        /**
-         * Full list of events:
-         * start
-         * pause
-         * tick
-         * loop
-         * complete
-         * reset
-         * destroy
-         */
+        // create new particle emitter
+        this.particleEmitter = new Lightning.ParticleEmitter(this, this.game.center.x, this.game.center.y);
+        // add the particle emitter to this stage
+        this.add(this.particleEmitter);
+        // generate a texture for the particle emitter
+        var texture = Lightning.Geometry.Triangle(15, 15).generateCanvasTexture();
+        // add that texture to the particle emitter
+        this.particleEmitter.add(texture);
+        // set the velocity ranges from -0.05 to 0.05 for both x and y velocities
+        this.particleEmitter.setVelocityRange(-0.05, 0.05, -0.05, 0.05);
+        // adjust the gravity and velocity range for this demo (not nesessary)
+        this.particleEmitter.setGravity(0, 0);
+        this.particleEmitter.setVelocityRange(-3, 3, -3, 3);
+        // start the particle emitter (not passing any parameters will make it run indefinitly)
+        this.particleEmitter.start();
     };
     return GameScene;
 }(Lightning.Scene));

@@ -21,13 +21,11 @@ var GameScene = (function (_super) {
         // add the particle emitter to this stage
         this.add(this.particleEmitter);
         // generate a rectangle texture for the particle emitter
-        var rect = Lightning.Geometry.Rect(3, 10);
-        var rectTexture = this.game.texture(rect);
+        var rect = Lightning.Geometry.Rect(3, 10).generateCanvasTexture();
         // generate a circle texture for the particle emitter
-        var circle = Lightning.Geometry.Circle(8);
-        var circleTexture = this.game.texture(circle);
+        var circle = Lightning.Geometry.Circle(8).generateCanvasTexture();
         // add both textures to the particle emitter
-        this.particleEmitter.add(rectTexture, circleTexture);
+        this.particleEmitter.add(circle, rect);
         /**
          * -- OR --
          * this.particleEmitter.add(rectTexture);

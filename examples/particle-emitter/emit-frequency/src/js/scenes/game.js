@@ -21,7 +21,7 @@ var GameScene = (function (_super) {
         // add the particle emitter to this stage
         this.add(this.particleEmitter);
         // make a new shape and texture
-        var texture = this.game.texture(Lightning.Geometry.Circle(5));
+        var texture = Lightning.Geometry.Circle(5).generateCanvasTexture();
         // add that texture to the particle emitter
         this.particleEmitter.add(texture);
         // Set the emitter to emit every 1000ms

@@ -10,7 +10,7 @@ protected particleEmitter:Lightning.ParticleEmitter
         this.add(this.particleEmitter);
 
         // make a new texture from the geomerty class
-        let texture = this.game.texture(Lightning.Geometry.Circle(5));
+        let texture = Lightning.Geometry.Circle(5).generateCanvasTexture();
 
         // add that texture to the particle emitter
         this.particleEmitter.add(texture);

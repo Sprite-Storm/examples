@@ -21,7 +21,7 @@ var GameScene = (function (_super) {
         // add the particle emitter to this stage
         this.add(this.particleEmitter);
         // make a new texture from the geomerty class
-        var texture = Lightning.Geometry.Circle(5, 0xffffff, 1, true);
+        var texture = Lightning.Geometry.Circle(5).generateCanvasTexture();
         // add that texture to the particle emitter
         this.particleEmitter.add(texture);
         // start the particle emitter (not passing any parameters will make it run indefinitly)

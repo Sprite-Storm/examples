@@ -10,7 +10,7 @@ export default class GameScene extends Lightning.Scene {
         this.add(this.particleEmitter);
 
         // make a new texture from the geomerty class
-        let texture = <Lightning.Texture>Lightning.Geometry.Circle(5, 0xffffff, 1, true);
+        let texture = Lightning.Geometry.Circle(5).generateCanvasTexture();
 
         // add that texture to the particle emitter
         this.particleEmitter.add(texture);

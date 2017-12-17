@@ -21,7 +21,7 @@ var GameScene = (function (_super) {
         // add the particle emitter to this stage
         this.add(this.particleEmitter);
         // generate a texture for the particle emitter
-        var texture = Lightning.Geometry.Rect(8, 8, 0xffffff, 1, true);
+        var texture = Lightning.Geometry.Rect(8, 8).generateCanvasTexture();
         // add that texture to the particle emitter
         this.particleEmitter.add(texture);
         // set the alpha incrementor range from -0.01, to -0.03

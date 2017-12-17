@@ -10,7 +10,7 @@ export default class GameScene extends Lightning.Scene {
         this.add(this.particleEmitter);
 
         // generate a texture for the particle emitter
-        let texture:Lightning.Texture = this.game.texture(Lightning.Geometry.Triangle(15, 15));
+        let texture:Lightning.Texture = Lightning.Geometry.Triangle(15, 15).generateCanvasTexture();
 
         // add that texture to the particle emitter
         this.particleEmitter.add(texture);

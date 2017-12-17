@@ -1,9 +1,45 @@
 [
     {
         "active": true,
+        "name": "Audio",
+        "uri": "audio",
+        "count": 5
+    },
+    {
+        "active": true,
+        "name": "Geometry",
+        "uri": "geometry",
+        "count": 5
+    },
+    {
+        "active": true,
+        "name": "Input",
+        "uri": "input",
+        "count": 2
+    },
+    {
+        "active": true,
+        "name": "Maths",
+        "uri": "maths",
+        "count": 2
+    },
+    {
+        "active": true,
+        "name": "Particle Emitter",
+        "uri": "particle-emitter",
+        "count": 11
+    },
+    {
+        "active": true,
         "name": "Sprites",
         "uri": "sprites",
-        "count": 0
+        "count": 7
+    },
+    {
+        "active": true,
+        "name": "Text",
+        "uri": "text",
+        "count": 2
     },
     {
         "active": true,

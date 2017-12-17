@@ -21,7 +21,7 @@ var GameScene = (function (_super) {
         // add the particle emitter to this stage
         this.add(this.particleEmitter);
         // generate a texture for the particle emitter
-        var texture = this.game.texture(Lightning.Geometry.Triangle(15, 15));
+        var texture = Lightning.Geometry.Triangle(15, 15).generateCanvasTexture();
         // add that texture to the particle emitter
         this.particleEmitter.add(texture);
         // set the increment range at which the scale gets increased

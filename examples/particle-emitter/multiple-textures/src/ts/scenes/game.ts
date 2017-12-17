@@ -10,15 +10,13 @@ export default class GameScene extends Lightning.Scene {
         this.add(this.particleEmitter);
 
         // generate a rectangle texture for the particle emitter
-        let rect = Lightning.Geometry.Rect(3, 10);
-        let rectTexture = this.game.texture(rect);
+        let rect = Lightning.Geometry.Rect(3, 10).generateCanvasTexture();
 
         // generate a circle texture for the particle emitter
-        let circle = Lightning.Geometry.Circle(8);
-        let circleTexture = this.game.texture(circle);
+        let circle = Lightning.Geometry.Circle(8).generateCanvasTexture();
 
         // add both textures to the particle emitter
-        this.particleEmitter.add(rectTexture, circleTexture);
+        this.particleEmitter.add(circle, rect);
 
         /**
          * -- OR --

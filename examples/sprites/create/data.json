@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 {
   "name": "Create",
   "uri": "create",
@@ -20,27 +19,4 @@
       "language": "typescript"
     }
   ]
-=======
-{
-  "name": "Create",
-  "uri": "create",
-  "thumb": "/img/examples/tweens/events/thumb.png",
-  "version": "0.5.1",
-  "tabs": [
-    {
-      "name": "Info",
-      "id": "info",
-      "desc": "",
-      "src_file": "info.txt",
-      "language": "markdown"
-    },
-    {
-      "name": "Game State",
-      "id": "game-state",
-      "desc": "",
-      "src_file": "src/ts/scenes/game.ts",
-      "language": "typescript"
-    }
-  ]
->>>>>>> 538a294ebcbc85821fd4f04c1a63b02243ca9cbd
 }

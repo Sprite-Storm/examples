@@ -2,17 +2,16 @@ export default class GameScene extends Lightning.Scene {
 
     public create() {
         //Define graphics
-        let graphics: Lightning.Graphics = Lightning.Geometry.Square(100, 0xffffff);
+        let graphics:any = Lightning.Geometry.Square(100, 0xffffff);
 
-        //Create a texture from our graphics opject
+        //Create a texture from our graphics object
         let texture: Lightning.Texture = graphics.generateCanvasTexture();
 
         /**
          * Create text to append to our sprite that is draggable
          * Set text anchor x and y to center
          */
-        let spriteText: Lightning.Text = new Lightning.Text('Click Me!', <any>{ fontSize: 24, fill: 0x000000
-        });
+        let spriteText: Lightning.Text = new Lightning.Text('Click Me!', <any>{ fontSize: 24, fill: 0x000000});
         spriteText.anchor.x = 0.5;
         spriteText.anchor.y = 0.5;
 
@@ -36,15 +35,15 @@ export default class GameScene extends Lightning.Scene {
          * Create an on mouse down function
          * Pass our button click function inside our lexical function which accepts our sprite
          */
-        sprite.on('mouseup', () => {
-            this.spriteClick(sprite);
-        });
+        sprite.on('mouseup', this.spriteClick, sprite);
     }
 
     /**
      * Create our function to fire on button click
      */
     spriteClick(sprite) {
+
+        console.log(this);
 
         /**
          * Create an empty array to hold our randomly generated hex color for our button
@@ -79,6 +78,6 @@ export default class GameScene extends Lightning.Scene {
         /**
          * Set our sprites tint equal to the random color generated
          */
-        sprite.tint = color;
+        this.tint = color;
     }
 }

@@ -16,17 +16,15 @@ var GameScene = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     GameScene.prototype.create = function () {
-        var _this = this;
         //Define graphics
         var graphics = Lightning.Geometry.Square(100, 0xffffff);
-        //Create a texture from our graphics opject
+        //Create a texture from our graphics object
         var texture = graphics.generateCanvasTexture();
         /**
          * Create text to append to our sprite that is draggable
          * Set text anchor x and y to center
          */
-        var spriteText = new Lightning.Text('Click Me!', { fontSize: 24, fill: 0x000000
-        });
+        var spriteText = new Lightning.Text('Click Me!', { fontSize: 24, fill: 0x000000 });
         spriteText.anchor.x = 0.5;
         spriteText.anchor.y = 0.5;
         /**
@@ -47,14 +45,13 @@ var GameScene = (function (_super) {
          * Create an on mouse down function
          * Pass our button click function inside our lexical function which accepts our sprite
          */
-        sprite.on('mouseup', function () {
-            _this.spriteClick(sprite);
-        });
+        sprite.on('mouseup', this.spriteClick, sprite);
     };
     /**
      * Create our function to fire on button click
      */
     GameScene.prototype.spriteClick = function (sprite) {
+        console.log(this);
         /**
          * Create an empty array to hold our randomly generated hex color for our button
          */
@@ -83,7 +80,7 @@ var GameScene = (function (_super) {
         /**
          * Set our sprites tint equal to the random color generated
          */
-        sprite.tint = color;
+        this.tint = color;
     };
     return GameScene;
 }(Lightning.Scene));
