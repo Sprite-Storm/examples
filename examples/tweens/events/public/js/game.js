@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var boot_1 = require("./scenes/boot");
 var preload_1 = require("./scenes/preload");
 var game_1 = require("./scenes/game");
-var Game = (function () {
+var Game = /** @class */ (function () {
     function Game(width, height) {
         if (width === void 0) { width = 500; }
         if (height === void 0) { height = 500; }
@@ -42,7 +42,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var BootScene = (function (_super) {
+var BootScene = /** @class */ (function (_super) {
     __extends(BootScene, _super);
     function BootScene() {
         return _super !== null && _super.apply(this, arguments) || this;
@@ -72,13 +72,13 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var GameScene = (function (_super) {
+var GameScene = /** @class */ (function (_super) {
     __extends(GameScene, _super);
     function GameScene() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     GameScene.prototype.create = function () {
-        // create a sample cube
+        // create a sample cube and add it to the scene
         var cube = new Lightning.Sprite(Lightning.Geometry.Square(50, 0xff2200)['generateTexture']());
         this.add(cube);
         // create a basic tween
@@ -107,15 +107,7 @@ var GameScene = (function (_super) {
          * reset
          * destroy
          */
-        // start the regular tween here
-        // tween.start();
-        var tween2 = this.game.tweens.create(cube);
-        // use frames for importing static animations
-        tween2.importAnim('y', [50, 49, 48, 47, 46, 45, 44, 43, 42, 41, 40, 39, 38, 37]);
-        tween2.importAnim('x', [25, 30, 35, 45, 46, 45, 44, 43, 42, 41, 40, 39, 38, 37]);
-        // chain tween 1 with chain 2
-        tween.chain(tween2);
-        // start the first tween now
+        // start the tween
         tween.start();
     };
     return GameScene;
@@ -135,7 +127,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var PreloadScene = (function (_super) {
+var PreloadScene = /** @class */ (function (_super) {
     __extends(PreloadScene, _super);
     function PreloadScene() {
         return _super !== null && _super.apply(this, arguments) || this;
